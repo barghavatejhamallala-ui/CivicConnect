@@ -1,0 +1,2 @@
+# CivicConnect
+Software Engineering project 
