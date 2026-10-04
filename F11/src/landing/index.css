@@ -1,0 +1,64 @@
+:root {
+  /* Brand palette — midnight blue & gold, matched to the CivicConnect logo */
+  --navy: #03045E;       /* primary brand color */
+  --navy-soft: #0C1B7A;  /* lighter navy for gradients */
+  --blue: #023EBA;       /* secondary accent */
+  --cyan: #00B4D8;       /* sparing highlight only */
+  --gold: #FBB02D;       /* accent / call-to-action */
+  --gold-dark: #E29A15;  /* gold hover state */
+
+  --ink: #1A2140;        /* body copy */
+  --muted: #5B6478;      /* secondary / supporting text */
+  --white: #FFFFFF;
+  --bg-soft: #F5F7FC;    /* alternate section background */
+  --border: #E4E8F5;
+
+  --font-display: "Newsreader", Georgia, serif;
+  --font-sans: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+
+  --shadow-sm: 0 2px 10px rgba(3, 4, 94, 0.06);
+  --shadow-md: 0 10px 30px rgba(3, 4, 94, 0.1);
+  --shadow-lg: 0 20px 45px rgba(3, 4, 94, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--ink);
+  background: var(--white);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

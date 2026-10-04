@@ -1,0 +1,20 @@
+import { Router } from 'express';
+import { asyncHandler, ok } from '../utils/http.js';
+import { requireAuth, allowRoles } from '../middleware/auth.js';
+import { idSchema, assignSchema } from '../utils/validation.js';
+import { dashboardForAuthority, listAuthorityComplaints, getComplaint, assignWorker, rankWorkers } from '../services/complaints.js';
+import { listWorkers } from '../services/users.js';
+import { listNotifications, markNotificationRead, markAllNotificationsRead } from '../services/notifications.js';
+
+const router=Router(); router.use(requireAuth,allowRoles('authority'));
+router.get('/dashboard',asyncHandler(async(_req,res)=>ok(res,await dashboardForAuthority())));
+router.get('/complaints',asyncHandler(async(req,res)=>ok(res,await listAuthorityComplaints({status:req.query.status,priority:req.query.priority,category:req.query.category,q:req.query.q}))));
+router.get('/complaints/:id',asyncHandler(async(req,res)=>ok(res,await getComplaint(idSchema.parse(req.params.id)))));
+router.get('/complaints/:id/workers',asyncHandler(async(req,res)=>ok(res,await rankWorkers(idSchema.parse(req.params.id)))));
+router.post('/complaints/:id/assign',asyncHandler(async(req,res)=>ok(res,await assignWorker(req.user.id,idSchema.parse(req.params.id),assignSchema.parse(req.body)))));
+router.get('/workers',asyncHandler(async(_req,res)=>ok(res,await listWorkers())));
+router.get('/tracking',asyncHandler(async(req,res)=>ok(res,await listAuthorityComplaints({status:req.query.status}))));
+router.get('/notifications',asyncHandler(async(req,res)=>ok(res,await listNotifications(req.user.id))));
+router.patch('/notifications/:id/read',asyncHandler(async(req,res)=>ok(res,await markNotificationRead(req.user.id,idSchema.parse(req.params.id)))));
+router.post('/notifications/read-all',asyncHandler(async(req,res)=>ok(res,await markAllNotificationsRead(req.user.id))));
+export default router;

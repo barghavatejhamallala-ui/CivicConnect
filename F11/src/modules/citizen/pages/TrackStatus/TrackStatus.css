@@ -1,0 +1,100 @@
+.track { padding: 20px 20px 40px; max-width: none; }
+
+.track__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.track__back {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.track__back:hover { background: var(--background-dim); }
+
+.track__loading { display: flex; justify-content: center; padding: 60px 0; }
+
+.track__content { display: flex; flex-direction: column; gap: 16px; }
+
+.track__summary { padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+
+.track__photo {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.track__summary-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.track__icon {
+  width: 44px; height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--background-dim);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.track__summary-heading { flex: 1; min-width: 0; }
+.track__id {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  font-family: var(--font-display);
+}
+.track__summary-heading h2 { font-size: 1.15rem; margin-top: 2px; }
+
+.track__desc { font-size: 0.9rem; line-height: 1.55; }
+
+.track__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  padding-top: 6px;
+  border-top: 1px solid var(--border);
+}
+.track__meta span { display: flex; align-items: center; gap: 6px; }
+
+.track__share {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary);
+  background: var(--background-dim);
+  padding: 8px 14px;
+  border-radius: var(--radius-full);
+}
+.track__share:hover { background: var(--border); }
+
+.track__timeline-card { padding: 22px 20px; }
+.track__timeline-title { margin-bottom: 18px; }
+
+@media (min-width: 640px) {
+  .track__summary-top { align-items: center; }
+}
+
+@media (min-width: 960px) {
+  .track { padding: 32px 38px 48px; }
+  .track__content { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+  .track__content > .track__photos-card { grid-column: 1 / -1; }
+}
+.track__photos-card { padding: 22px 20px; }

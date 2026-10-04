@@ -1,0 +1,86 @@
+:root {
+  /* ===== Brand — aligned with the Civic Connect Worker Module design system ===== */
+  --primary: #03045e;        /* midnight — chrome, headers, nav */
+  --primary-dark: #03045e;   /* near-black midnight — headings, hero backdrops */
+  --primary-light: #0c1b7a;  /* midnight-light — hovers, gradients */
+  --secondary: #0c1b7a;      /* supporting deep navy, used in hero gradients */
+  --accent: #fbb02d;         /* gold — primary CTA / active-state identity */
+  --accent-dark: #e29a15;
+  --accent-light: #ffd37a;
+
+  /* ===== Neutrals / surfaces ===== */
+  --background: #f5f7fc;
+  --background-dim: #EEF1F8;
+  --surface: #FFFFFF;
+  --surface-raised: #FFFFFF;
+  --border: #e4e8f5;
+  --border-strong: #D7DAE8;
+
+  --text-primary: #03045e;
+  --text-secondary: #5b6478;
+  --text-muted: #8A90A5;
+  --text-on-dark: #FFFFFF;
+  --text-on-dark-dim: rgba(255, 255, 255, 0.72);
+
+  /* ===== Status ===== */
+  --success: #20A66A;
+  --success-bg: #E5F7EF;
+  --warning: #E7A900;
+  --warning-bg: #FCF3DE;
+  --error: #E34D59;
+  --error-bg: #FDEAE6;
+  --info: #03045e;
+  --info-bg: rgba(3, 4, 94, 0.09);
+
+  /* ===== Typography ===== */
+  --font-display: "IBM Plex Sans", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, sans-serif;
+
+  /* ===== Radius ===== */
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 20px;
+  --radius-xl: 26px;
+  --radius-button: 13px;
+  --radius-full: 999px;
+
+  /* ===== Shadow — navy-tinted, matching the Worker Module ===== */
+  --shadow-sm: 0 6px 18px rgba(3, 4, 94, 0.08);
+  --shadow-md: 0 12px 30px rgba(3, 4, 94, 0.12);
+  --shadow-lg: 0 20px 50px rgba(3, 4, 94, 0.16);
+  --shadow-gold: 0 10px 25px rgba(251, 176, 45, 0.18);
+  --shadow-navy: 0 15px 35px rgba(3, 4, 94, 0.18);
+
+  /* ===== Motion ===== */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 150ms;
+  --dur-base: 250ms;
+  --dur-slow: 450ms;
+
+  /* ===== Layout ===== */
+  --max-width: 1180px;
+  --nav-height: 72px;
+  --bottom-nav-height: 72px;
+  --sidebar-width: 250px;
+  --sidebar-width-collapsed: 84px;
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+
+  /* ===== Gradients — matching the Worker Module's hero/card treatments ===== */
+  --gradient-hero: linear-gradient(135deg, #03045e 0%, #03045e 55%, #0c1b7a 100%);
+  --gradient-gold: linear-gradient(135deg, #ffd37a 0%, #fbb02d 100%);
+  --gradient-surface: linear-gradient(180deg, #FFFFFF 0%, #f5f7fc 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.04) 100%);
+}
+
+[data-theme='dark'] {
+  --background: #03045e;
+  --background-dim: #03045e;
+  --surface: #0c1b7a;
+  --surface-raised: #03045e;
+  --border: #0c1b7a;
+  --border-strong: #4C5AA3;
+  --text-primary: #FFFFFF;
+  --text-secondary: rgba(255, 255, 255, 0.72);
+  --text-muted: rgba(255, 255, 255, 0.5);
+}
